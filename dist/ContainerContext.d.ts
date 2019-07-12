@@ -1,4 +1,6 @@
 /// <reference types="react" />
-export interface ContainerContextValue {
+import { Container } from './container';
+export interface ContainerContextValue<T> {
+    container: Container<T> | null;
 }
-export declare const ContainerContext: import("react").Context<ContainerContextValue>;
+export declare const ContainerContext: import("react").Context<ContainerContextValue<any>>;

@@ -1,35 +1,41 @@
-export type Container<
-  T extends ContainerConfig<any>,
-  K extends keyof T = keyof T
-> = {
-  get(identifier: K): ReturnType<T[K]>;
+export interface Container<T> {
+  get<K extends keyof T>(identifier: K): T[K];
+  getAll(): T;
+}
+
+export type Factory<T, R> = (container: Container<T>) => R;
+
+export type ContainerConfig<T> = {
+  [K in keyof T]: Factory<T, T[K]>;
 };
 
-export type Factory<T extends ContainerConfig<any>, K extends keyof T> = (container: Container<T>) => ReturnType<T[K]>;
+export type StateFromContainer<T> = T extends Container<infer X> ? X : never;
+type StateFromConfig<T> = T extends ContainerConfig<infer X> ? X : never;
 
-export type ContainerConfig<T extends ContainerConfig<any>> = {
-  [K in keyof T]: Factory<T, K>;
-};
-
-export const createContainer = <T extends ContainerConfig<any>>(config: T) => {
+export const createContainer = <
+  C extends ContainerConfig<any>,
+  T extends StateFromConfig<C>
+>(
+  config: C
+): Container<T> => {
   if (!config) {
     throw new Error('Recontainer: No config provided.');
   }
 
-  const cache = new Map<string | number | symbol, any>();
+  const cache = new Map<keyof C, any>();
   const container = {
-    get: <K extends keyof T>(identifier: keyof T): ReturnType<T[K]> => {
+    get: <K extends keyof C>(identifier: keyof C): ReturnType<C[K]> => {
       const factory = config[identifier];
 
       if (!factory) {
         throw new Error(
-          `Recontainer: Error while getting factory from container. No factory registered for identifier "${identifier}". Consider adding a function described by "${identifier}" property in ContainerConfig object`
+          `Recontainer: Error while getting factory from container. No factory registered for identifier "${identifier}". Consider adding a function described by "${identifier}" property in ContainerConfig object.`
         );
       }
 
       if (typeof factory !== 'function') {
         throw new Error(
-          `Recontainer: Incorrect factory provided. Check the value provided as factory in ContainerConfig object. It should be of type`
+          `Recontainer: Incorrect factory provided. Check if the value provided as factory in ContainerConfig object is a function.`
         );
       }
 
@@ -44,6 +50,15 @@ export const createContainer = <T extends ContainerConfig<any>>(config: T) => {
       cache.set(identifier, value);
 
       return value;
+    },
+    getAll: (): T => {
+      return Object.keys(config).reduce(
+        (spec, key) => ({
+          ...spec,
+          [key]: container.get(key),
+        }),
+        {}
+      ) as T;
     },
   };
 

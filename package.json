@@ -2,9 +2,11 @@
   "name": "recontainer",
   "version": "0.0.1",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "lint": "tslint --project tsconfig.json",
+    "build": "rm -rf ./dist && tsc",
     "test": "jest ./src"
   },
   "repository": {
@@ -18,7 +20,7 @@
     "container",
     "dependencies"
   ],
-  "author": "Amadeusz Winogrodzki",
+  "author": "Amadeusz Winogrodzki <amadeusz.winogrodzki@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/awinogrodzki/recontainer/issues"
@@ -31,11 +33,16 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.2"
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^16.8.6"
   }
 }
