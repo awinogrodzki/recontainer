@@ -57,8 +57,8 @@ const user = {
 };
 
 export const config: ContainerConfig<Dependencies> = {
-  greetingProvider: () => (user: User) => `Hello ${user.name}!`,
   user: () => user,
+  greetingProvider: () => (user: User) => `Hello ${user.name}!`,
   greeting: container => {
     const greetingFactory = container.get('greetingProvider');
     const user = container.get('user');
@@ -165,8 +165,8 @@ const user = {
 };
 
 export const config = {
-  greetingProvider: () => user => `Hello ${user.name}!`,
   user: () => user,
+  greetingProvider: () => user => `Hello ${user.name}!`,
   greeting: container => {
     const greetingFactory = container.get('greetingProvider');
     const user = container.get('user');
