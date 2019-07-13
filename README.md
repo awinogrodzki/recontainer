@@ -283,7 +283,7 @@ $ npm install recontainer
 
   ```javascript
    const container = createContainer({
-     logger: message => console.log(message),
+     logger: () => message => console.log(message),
    });
    const log = container.get('logger');
 
