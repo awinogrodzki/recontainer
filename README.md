@@ -17,6 +17,8 @@ In most cases, ES6 modules are efficient way to share dependencies throughout ap
 
 There are some situations though, where you need a single point of configuration to achieve better decoupling between multiple components. One of these cases is server-side rendering, in which you might want to change implementation that depends on browser APIs to something more suitable for a Node.js application.
 
+Moreover, using global instances imported as ES6 module can lead to memory-leaks and bugs on server-side. Take for example a global instance of event publisher, to which application subscribes on each request. Since it is not disposed after each request, any failure to unsubscribe will cause linear leak of memory.
+
 ### Why not Redux?
 
 Redux is great at distributing state throughout application and decoupling your React components. Although you could share almost any object via store, it is generally a good practice to keep the state serializable. Many redux-related libraries (eg. [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)) will not work if the state couldn't be serialized.
@@ -26,7 +28,7 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 ### Features
 
 * 100% Type-safe
-  > When used with **TypeScript**, recontainer protects you from type errors and allows you to extract the full potential of you editor's code completion features
+  > When used with **TypeScript**, recontainer protects you from type errors and allows you to extract the full potential of your editor's code completion features
 * Light-weight
   > Total module size is 914 bytes gzipped
 * Simple
@@ -279,7 +281,7 @@ $ npm install recontainer
 ### Docs
 
 #### Container methods
-* get
+##### get
 
   ```javascript
    const container = createContainer({
@@ -290,7 +292,7 @@ $ npm install recontainer
 
    log('Hello World!'); // Console output: Hello World!
   ```
-* getAll
+##### getAll
   ```javascript
    const container = createContainer({
      logger: () => message => console.log(message),
