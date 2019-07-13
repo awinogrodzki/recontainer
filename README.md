@@ -269,7 +269,7 @@ With npm
 $ npm install recontainer
 ```
 
-*Please note, that types are included, so there is no need to install @types/recontainer package*
+*Please note that types are included, thus there is no need to install @types/recontainer package*
 
 ### Requirements
 
