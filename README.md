@@ -28,7 +28,7 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 ### Features
 
 * 100% Type-safe
-  > When used with **TypeScript**, recontainer protects you from type errors and allows you to extract the full potential of you editor's code completion features
+  > When used with **TypeScript**, recontainer protects you from type errors and allows you to extract the full potential of your editor's code completion features
 * Light-weight
   > Total module size is 914 bytes gzipped
 * Simple
