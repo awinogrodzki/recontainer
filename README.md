@@ -2,7 +2,7 @@
   <img src="./assets/logo.svg" width="400px" height="115px" alt="recontainer" />
 </p>
 
-<h3 align="center">
+<h3 align="center" color="#24292e">
   Light and simple dependency injection for TypeScript and JavaScript React applications.
 </h3>
 
