@@ -30,7 +30,7 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 <details>
 <summary>TypeScript</summary>
 
-> `types.ts`
+> types.ts
 ```typescript
 export interface User {
   id: string;
@@ -40,7 +40,7 @@ export interface User {
 
 <br>
 
-> `container.ts`
+> container.ts
 ```typescript
 import { createInject, ContainerConfig } from 'recontainer';
 import { User } from './types';
@@ -72,7 +72,7 @@ export const inject = createInject<Dependencies>(); // createInject function cre
 
 <br>
 
-> `Greeter.tsx`
+> Greeter.tsx
 <details open>
 <summary>Using <b>inject</b></summary>
 
@@ -126,7 +126,7 @@ export default withContainer(Greeter);
 
 <br>
 
-> `App.tsx`
+> App.tsx
 ```tsx
 import * as React from 'react';
 import { createContainer } from 'recontainer';
@@ -155,7 +155,7 @@ export const App: React.FunctionComponent = () => (
 <summary>JavaScript</summary>
 
 
-> `container.js`
+> container.js
 ```javascript
 import { createInject } from 'recontainer';
 
@@ -180,7 +180,7 @@ export const inject = createInject(); // createInject function creates `inject` 
 
 <br>
 
-> `Greeter.jsx`
+> Greeter.jsx
 <details open>
 <summary>Using <b>inject</b></summary>
 
@@ -224,7 +224,7 @@ export default withContainer(Greeter);
 
 <br>
 
-> `App.jsx`
+> App.jsx
 ```jsx
 import React from 'react';
 import { createContainer } from 'recontainer';
