@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="center">
-  Light and simple dependency injection container for TypeScript and JavaScript React applications.
+  Light and simple dependency injection for TypeScript and JavaScript React applications.
 </h3>
 
 <br>
