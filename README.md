@@ -279,17 +279,18 @@ $ npm install recontainer
 ### Docs
 
 #### Container methods
-* `get(key: string)`
+* get
 
   ```javascript
    const container = createContainer({
      logger: () => message => console.log(message),
    });
+
    const log = container.get('logger');
 
    log('Hello World!'); // Console output: Hello World!
   ```
-* `getAll()`
+* getAll
   ```javascript
    const container = createContainer({
      logger: () => message => console.log(message),
