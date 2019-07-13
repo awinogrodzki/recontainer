@@ -17,7 +17,7 @@ In most cases, ES6 modules are efficient way to share dependencies throughout ap
 
 There are some situations though, where you need a single point of configuration to achieve better decoupling between multiple components. One of these cases is server-side rendering, in which you might want to change implementation that depends on browser APIs to something more suitable for a Node.js application.
 
-Moreover, using global instances imported as ES6 module can lead to memory-leaks and bugs on server-side. Take for example a global instance of event publisher, to which application subscribes on each request. Since it is not disposed after each request, any failure to unsubscribe will cause linear leak of memory.
+Moreover, using global instances imported as ES6 module can lead to memory-leaks and bugs on server-side. Take for example a global instance of event publisher, to which application subscribes on each request. Since it is not disposed after each request, any failure to unsubscribe will cause a linear leak of memory.
 
 ### Why not Redux?
 
