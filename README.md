@@ -275,3 +275,28 @@ $ npm install recontainer
 
 * [React](https://github.com/facebook/react/) ^16.8.6
 * *optional* [TypeScript](https://github.com/microsoft/TypeScript) ^3.5.2
+
+### Docs
+
+#### Container methods
+* `get(key: string)`
+
+  ```javascript
+   const container = createContainer({
+     logger: message => console.log(message),
+   });
+   const log = container.get('logger');
+
+   log('Hello World!'); // Console output: Hello World!
+  ```
+* `getAll()`
+  ```javascript
+   const container = createContainer({
+     logger: () => message => console.log(message),
+     message: () => 'Foo bar',
+   });
+
+   const { logger, message } = container.getAll();
+
+   logger(message); // Console output: Foo bar
+  ```
