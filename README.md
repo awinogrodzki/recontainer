@@ -23,6 +23,13 @@ Redux is great at distributing state throughout application and decoupling your 
 
 Functions and object instances (eg. `Promise`) are not serializable, thus we should keep them elsewhere.
 
+### Features
+
+* 100% Type-safe
+  > When used with **TypeScript**, recontainer protects you from type errors and allows you to extract the full potential of you editor's code completion features
+* Light-weight
+  > Total module size is 914 bytes gzipped
+* Simple
 
 
 ## Examples
@@ -249,3 +256,22 @@ export const App = () => (
 );
 ```
 </details>
+
+## Installation
+
+With yarn
+```sh
+$ yarn add recontainer
+```
+
+With npm
+```sh
+$ npm install recontainer
+```
+
+*Please note, that types are included, so there is no need to install @types/recontainer package*
+
+### Requirements
+
+* [React](https://github.com/facebook/react/) ^16.8.6
+* *optional* [TypeScript](https://github.com/microsoft/TypeScript) ^3.5.2
