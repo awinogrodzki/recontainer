@@ -1,23 +1,9 @@
 import * as React from 'react';
-import { Container, StateFromContainer } from './container';
 import { ContainerContextValue, ContainerContext } from './ContainerContext';
 
 type PropsFromKeys<S, K extends keyof S> = {
   [P in K]: S[P];
 };
-
-interface Dependencies {
-  config: string;
-  test: number;
-}
-
-interface Props extends Dependencies {
-  fromProps: string;
-}
-
-type Test = PropsFromKeys<Dependencies, 'config' | 'test'>;
-
-type Test2 = WithoutProps<Test & Props, 'config' | 'test'>;
 
 type WithoutProps<P, K> = Pick<P, Exclude<keyof P, K>>;
 
