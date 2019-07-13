@@ -12,14 +12,12 @@
 
 
 ### Why?
----------
 
 In most cases, ES6 modules are efficient way to share dependencies throughout application. 
 
 There are some situations though, where you need a single point of configuration to achieve better decoupling between multiple components. One of these cases is server-side rendering, in which you might want to change implementation that depends on browser APIs to something more suitable for a Node.js application.
 
 ### Why not Redux?
-------------------
 
 Redux is great at distributing state throughout application and decoupling your React components. Although you could share almost any object via store, it is generally a good practice to keep the state serializable. Many redux-related libraries (eg. [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)) will not work if the state couldn't be serialized.
 
@@ -28,7 +26,7 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 
 
 ## Examples
-------------
+
 <details>
 <summary>TypeScript</summary>
 
