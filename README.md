@@ -30,6 +30,8 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 <details>
 <summary>TypeScript</summary>
 
+<br>
+
 > types.ts
 ```typescript
 export interface User {
@@ -154,6 +156,7 @@ export const App: React.FunctionComponent = () => (
 <details>
 <summary>JavaScript</summary>
 
+<br>
 
 > container.js
 ```javascript
