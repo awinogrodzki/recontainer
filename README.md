@@ -36,7 +36,7 @@ Functions and object instances (eg. `Promise`) are not serializable, thus we sho
 
 ## Examples
 
-<details>
+<details open>
 <summary>TypeScript</summary>
 
 <br>
