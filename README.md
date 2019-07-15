@@ -140,7 +140,7 @@ export default withContainer(Greeter);
 > App.tsx
 ```tsx
 import * as React from 'react';
-import { createContainer } from 'recontainer';
+import { createContainer, ContainerProvider } from 'recontainer';
 import { config } from './container';
 import Greeter from './Greeter';
 
@@ -239,7 +239,7 @@ export default withContainer(Greeter);
 > App.jsx
 ```jsx
 import React from 'react';
-import { createContainer } from 'recontainer';
+import { createContainer, ContainerProvider } from 'recontainer';
 import { config } from './container';
 import Greeter from './Greeter';
 
