@@ -1,11 +1,9 @@
-<style>
-  .logo {
-    margin: 80px 0;
-  }
-</style>
-
-<p align="center" class="logo">
+<p align="center">
+  <br/>
+  <br/>
   <img src="./assets/logo.svg" width="400px" height="115px" alt="recontainer" />
+  <br/>
+  <br/>
 </p>
 
 <h3 align="center" color="#24292e">
