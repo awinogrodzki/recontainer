@@ -11,6 +11,7 @@
 ![gzip size](https://img.shields.io/badge/gzipped-914B-green.svg)
 
 
+
 ### Why?
 
 In most cases, ES6 modules are efficient way to share dependencies throughout application. 
