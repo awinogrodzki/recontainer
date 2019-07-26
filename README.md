@@ -19,6 +19,51 @@ There are some situations though, where you need a single point of configuration
 
 Moreover, using global instances imported as ES6 module can lead to memory-leaks and bugs on server-side. Take for example a global instance of event publisher, to which application subscribes on each request. Since it is not disposed after each request, any failure to unsubscribe will cause a linear leak of memory.
 
+<details>
+<summary>See <b>server side example in JavaScript</b></summary>
+
+> server.jsx
+```jsx
+import React from 'react';
+import express from 'express';
+import { renderToString } from 'react-dom/server';
+import { createContainer, createInject, ContainerProvider } from 'recontainer';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>{this.props.greeting}</h1>
+    )
+  }
+}
+
+const inject = createInject();
+const GreetingContainer = inject('greeting')(Greeting);
+
+const greetingFactory = container => `Hello, ${container.get('name')}!`;
+const app = express();
+
+app.use((req, res, next) => {
+  const container = createContainer({ // Container gets disposed after each request
+    name: () => 'John',
+    greeting: greetingFactory,
+  });
+
+  const html = renderToString(
+    <ContainerProvider container={container}>
+      <GreetingContainer /> {/* <h1>Hello, John!</h1> */}
+    </ContainerProvider>
+  );
+
+  res.send(html);
+});
+
+app.listen(3000, () => {
+  console.log(`Listening on port 3000.`);
+});
+```
+</details>
+
 ### Why not Redux?
 
 Redux is great at distributing state throughout application and decoupling your React components. Although you could share almost any object via store, it is generally a good practice to keep the state serializable. Many redux-related libraries (eg. [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)) will not work if the state couldn't be serialized.
