@@ -4,7 +4,6 @@
 </p>
 
 <br>
-<br>
 
 <h3 align="center" color="#24292e">
   Light and simple dependency injection for TypeScript and JavaScript React applications.
