@@ -1,9 +1,7 @@
 <p align="center">
-  <br/>
-  <br/>
+  <p>&nbsp;</p>
   <img src="./assets/logo.svg" width="400px" height="115px" alt="recontainer" />
-  <br/>
-  <br/>
+  <p>&nbsp;</p>
 </p>
 
 <h3 align="center" color="#24292e">
