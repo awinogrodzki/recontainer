@@ -1,4 +1,10 @@
-<p align="center" style="margin: 80px 0">
+<style>
+  .logo {
+    margin: 80px 0;
+  }
+</style>
+
+<p align="center" class="logo">
   <img src="./assets/logo.svg" width="400px" height="115px" alt="recontainer" />
 </p>
 
