@@ -12,7 +12,7 @@
     "strictNullChecks": true,
     "noUnusedParameters": true,
     "moduleResolution": "node",
-    "outDir": "./dist",
+    "outDir": "./lib",
     "declaration": true,
     "jsx": "react"
   },

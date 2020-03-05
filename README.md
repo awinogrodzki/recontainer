@@ -32,7 +32,7 @@ import React from 'react';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import { createContainer } from 'recontainer';
-import { createInject, ContainerProvider } from 'recontainer/react';
+import { createInject, ContainerProvider } from 'recontainer/lib/react';
 
 class Greeting extends React.Component {
   render() {
@@ -104,7 +104,7 @@ export interface User {
 > container.ts
 ```typescript
 import { ContainerConfig } from 'recontainer';
-import { createInject } from 'recontainer/react';
+import { createInject } from 'recontainer/lib/react';
 import { User } from './types';
 
 export interface Dependencies {
@@ -166,7 +166,7 @@ export default inject('greeting', 'user')(Greeter);
 
 ```tsx
 import * as React from 'react';
-import { withContainer, ContainerProps } from 'recontainer/react';
+import { withContainer, ContainerProps } from 'recontainer/lib/react';
 import { Dependencies } from './container';
 
 interface GreeterProps extends ContainerProps<Dependencies> {
@@ -192,7 +192,7 @@ export default withContainer(Greeter);
 ```tsx
 import * as React from 'react';
 import { createContainer } from 'recontainer';
-import { ContainerProvider } from 'recontainer/react';
+import { ContainerProvider } from 'recontainer/lib/react';
 import { config } from './container';
 import Greeter from './Greeter';
 
@@ -221,7 +221,7 @@ export const App: React.FunctionComponent = () => (
 
 > container.js
 ```javascript
-import { createInject } from 'recontainer/react';
+import { createInject } from 'recontainer/lib/react';
 
 const user = {
   id: 'john-doe',

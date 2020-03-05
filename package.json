@@ -2,14 +2,14 @@
   "name": "recontainer",
   "version": "0.2.3",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
   "files": [
-    "dist"
+    "lib"
   ],
-  "types": "./dist/index.d.ts",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./lib && tsc",
     "release": "standard-version",
     "prepublishOnly": "yarn build",
     "test": "jest ./src"
