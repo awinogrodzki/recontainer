@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
   "main": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
   "types": "./dist/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
