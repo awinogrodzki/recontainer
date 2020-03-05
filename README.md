@@ -13,7 +13,7 @@
 
 ![gzip size](https://img.shields.io/badge/gzipped-914B-green.svg)
 
-Can be used in any Node.js and browser applications. Built-in integration with React.
+Can be used in any Node.js or browser applications. Built-in integration with React.
 
 ### Why?
 
