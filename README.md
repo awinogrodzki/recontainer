@@ -31,7 +31,8 @@ Moreover, using global instances imported as ES6 module can lead to memory-leaks
 import React from 'react';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
-import { createContainer, createInject, ContainerProvider } from 'recontainer';
+import { createContainer } from 'recontainer';
+import { createInject, ContainerProvider } from 'recontainer/react';
 
 class Greeting extends React.Component {
   render() {
@@ -102,7 +103,8 @@ export interface User {
 
 > container.ts
 ```typescript
-import { createInject, ContainerConfig } from 'recontainer';
+import { ContainerConfig } from 'recontainer';
+import { createInject } from 'recontainer/react';
 import { User } from './types';
 
 export interface Dependencies {
@@ -164,7 +166,7 @@ export default inject('greeting', 'user')(Greeter);
 
 ```tsx
 import * as React from 'react';
-import { withContainer, ContainerProps } from 'recontainer';
+import { withContainer, ContainerProps } from 'recontainer/react';
 import { Dependencies } from './container';
 
 interface GreeterProps extends ContainerProps<Dependencies> {
@@ -189,7 +191,8 @@ export default withContainer(Greeter);
 > App.tsx
 ```tsx
 import * as React from 'react';
-import { createContainer, ContainerProvider } from 'recontainer';
+import { createContainer } from 'recontainer';
+import { ContainerProvider } from 'recontainer/react';
 import { config } from './container';
 import Greeter from './Greeter';
 
@@ -218,7 +221,7 @@ export const App: React.FunctionComponent = () => (
 
 > container.js
 ```javascript
-import { createInject } from 'recontainer';
+import { createInject } from 'recontainer/react';
 
 const user = {
   id: 'john-doe',

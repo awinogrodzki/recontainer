@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from './container';
+import { Container } from '../container';
 import { ContainerContext, ContainerContextValue } from './ContainerContext';
 
 export interface ContainerProps<T> {

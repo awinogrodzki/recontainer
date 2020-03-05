@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from './container';
+import { Container } from '../container';
 export interface ContainerProviderProps {
     container: Container<any>;
     children: React.ReactNode;

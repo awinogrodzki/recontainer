@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Container } from './container';
+import { Container } from '../container';
 
 export interface ContainerContextValue<T> {
   container: Container<T> | null;

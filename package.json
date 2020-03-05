@@ -8,7 +8,7 @@
     "lint": "tslint --project tsconfig.json",
     "build": "rm -rf ./dist && tsc",
     "release": "standard-version",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "test": "jest ./src"
   },
   "repository": {
