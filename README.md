@@ -6,14 +6,14 @@
 <br>
 
 <h3 align="center" color="#24292e">
-  Light and simple dependency injection for TypeScript and JavaScript React applications.
+  Light and simple dependency injection for TypeScript and JavaScript applications.
 </h3>
 
 <br>
 
 ![gzip size](https://img.shields.io/badge/gzipped-914B-green.svg)
 
-
+Can be used in any Node.js and browser applications. Built-in integration with React.
 
 ### Why?
 
