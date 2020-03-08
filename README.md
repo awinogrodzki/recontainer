@@ -104,7 +104,7 @@ export interface User {
 > container.ts
 ```typescript
 import { ContainerConfig } from 'recontainer';
-import { createInject } from 'recontainer/lib/react';
+import { createInject, createContainerHook } from 'recontainer/lib/react';
 import { User } from './types';
 
 export interface Dependencies {
@@ -130,7 +130,7 @@ export const config: ContainerConfig<Dependencies> = {
 };
 
 export const useContainer = createContainerHook<Dependencies>();
-export const inject = createInject<Dependencies>(); // createInject function creates type-aware `inject` higher order component
+export const inject = createInject<Dependencies>();
 ```
 
 <br>
@@ -244,7 +244,7 @@ export const App: React.FunctionComponent = () => (
 
 > container.js
 ```javascript
-import { createInject } from 'recontainer/lib/react';
+import { createInject, createContainerHook } from 'recontainer/lib/react';
 
 const user = {
   id: 'john-doe',
@@ -262,7 +262,8 @@ export const config = {
   },
 };
 
-export const inject = createInject(); // createInject function creates `inject` higher order component
+export const useContainer = createContainerHook();
+export const inject = createInject();
 ```
 
 <br>
