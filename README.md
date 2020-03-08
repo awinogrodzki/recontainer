@@ -154,7 +154,7 @@ const Greeter: React.FunctionComponent = () => {
   );
 }
 
-export default inject('greeting', 'user')(Greeter);
+export default Greeter;
 ```
 </details>
 
@@ -287,7 +287,7 @@ const Greeter = () => {
   );
 }
 
-export default inject('greeting', 'user')(Greeter);
+export default Greeter;
 ```
 </details>
 
