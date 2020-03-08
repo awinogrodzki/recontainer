@@ -144,7 +144,7 @@ import * as React from 'react';
 import { useContainer } from './container';
 
 const Greeter: React.FunctionComponent = () => {
-  const { greeting, user } = React.useContainer('greeting', 'user');
+  const { greeting, user } = useContainer('greeting', 'user');
   
   return (
     <div>
@@ -277,7 +277,7 @@ import { useContainer } from './container';
 
 const Greeter = () => {
   const { greeting, user } = useContainer('greeting', 'user');
-  
+
   return (
     <div>
       <h1>{greeting}</h1>
