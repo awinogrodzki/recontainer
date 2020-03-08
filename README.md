@@ -129,6 +129,7 @@ export const config: ContainerConfig<Dependencies> = {
   },
 };
 
+export const useContainer = createContainerHook<Dependencies>();
 export const inject = createInject<Dependencies>(); // createInject function creates type-aware `inject` higher order component
 ```
 
@@ -136,6 +137,28 @@ export const inject = createInject<Dependencies>(); // createInject function cre
 
 > Greeter.tsx
 <details open>
+<summary>Using <b>useContainer</b> hook</summary>
+
+```tsx
+import * as React from 'react';
+import { useContainer } from './container';
+
+const Greeter: React.FunctionComponent = () => {
+  const { greeting, user } = React.useContainer('greeting', 'user');
+  
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      ID: {user.id}
+    </div>
+  );
+}
+
+export default inject('greeting', 'user')(Greeter);
+```
+</details>
+
+<details>
 <summary>Using <b>inject</b></summary>
 
 ```tsx
@@ -246,6 +269,28 @@ export const inject = createInject(); // createInject function creates `inject` 
 
 > Greeter.jsx
 <details open>
+<summary>Using <b>useContainer</b> hook</summary>
+
+```jsx
+import React from 'react';
+import { useContainer } from './container';
+
+const Greeter = () => {
+  const { greeting, user } = useContainer('greeting', 'user');
+  
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      ID: {user.id}
+    </div>
+  );
+}
+
+export default inject('greeting', 'user')(Greeter);
+```
+</details>
+
+<details>
 <summary>Using <b>inject</b></summary>
 
 ```jsx
