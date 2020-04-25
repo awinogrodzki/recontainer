@@ -13,16 +13,17 @@ type WithoutContainerProps<T extends ContainerProps<any>> = Pick<
 
 export const withContainer = <T, P extends ContainerProps<T>>(
   Component: React.ComponentType<P>
-) => (props: WithoutContainerProps<P>) => {
-  const { container } = React.useContext<ContainerContextValue<T>>(
-    ContainerContext
-  );
-
-  if (!container) {
-    throw new Error(
-      `Recontainer: withContainer higher order component used outside of the ContainerContext provider. Please make sure that you have wrapped ${Component.name} component with ContainerProvider.`
+) =>
+  React.forwardRef((props: WithoutContainerProps<P>, ref) => {
+    const { container } = React.useContext<ContainerContextValue<T>>(
+      ContainerContext
     );
-  }
 
-  return <Component {...(props as P)} container={container} />;
-};
+    if (!container) {
+      throw new Error(
+        `Recontainer: withContainer higher order component used outside of the ContainerContext provider. Please make sure that you have wrapped ${Component.name} component with ContainerProvider.`
+      );
+    }
+
+    return <Component {...(props as P)} container={container} ref={ref} />;
+  });
