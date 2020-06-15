@@ -154,6 +154,19 @@ const Greeter: React.FunctionComponent = () => {
   );
 }
 
+// OR
+const Greeter: React.FunctionComponent = () => {
+  // Note that useContainer returns container instance when called without arguments
+  const container = useContainer();
+  
+  return (
+    <div>
+      <h1>{container.get('greeting')}</h1>
+      ID: {container.get('user').id}
+    </div>
+  );
+}
+
 export default Greeter;
 ```
 </details>

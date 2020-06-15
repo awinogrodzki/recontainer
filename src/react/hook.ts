@@ -1,7 +1,14 @@
 import { ContainerContextValue, ContainerContext } from "./ContainerContext";
 import { useContext } from "react";
+import { Container } from "../container";
 
-export const createContainerHook = <T extends object>() => <K extends keyof T>(...keys: K[]) => {
+interface UseContainer<T extends object> {
+  (): Container<T>;
+  <K extends keyof T>(key: K): Pick<T, K>;
+  <K extends keyof T>(key: K, ...keys: K[]): Pick<T, K>;
+} 
+
+export const createContainerHook = <T extends object>(): UseContainer<T> => (...keys: any[]) => {
   const { container } = useContext<ContainerContextValue<T>>(
     ContainerContext
   );
@@ -12,5 +19,9 @@ export const createContainerHook = <T extends object>() => <K extends keyof T>(.
     );
   }
 
-  return keys.reduce((dependencies, key) => ({ ...dependencies, [key]: container.get(key) }), {}) as T;
+  if (keys.length === 0) {
+    return container;
+  } 
+
+  return keys.reduce((dependencies, key) => ({ ...dependencies, [key]: container.get(key) }), {});
 };
