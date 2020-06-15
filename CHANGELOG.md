@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/awinogrodzki/recontainer/compare/v0.4.0...v0.5.1) (2020-06-15)
+
+
+### Features
+
+* **useContainer:** useContainer hook returns container instance when called without arguments ([a09e900](https://github.com/awinogrodzki/recontainer/commit/a09e90096a38b5b111f6d304ca5b5dd47638c585))
+
+
+### Bug Fixes
+
+* export UseContainer interface ([dbd712e](https://github.com/awinogrodzki/recontainer/commit/dbd712e9bfe053adf56e6c6236e2465dabb4f351))
+
 ## [0.5.0](https://github.com/awinogrodzki/recontainer/compare/v0.4.0...v0.5.0) (2020-06-15)
 
 

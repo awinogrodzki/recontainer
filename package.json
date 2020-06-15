@@ -1,6 +1,6 @@
 {
   "name": "recontainer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
   "main": "./lib/index.js",
   "files": [
