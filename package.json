@@ -49,6 +49,6 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.6 || ^17"
   }
 }
