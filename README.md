@@ -15,6 +15,22 @@
 
 Can be used in any Node.js or browser applications. Built-in integration with React.
 
+## Installation
+
+With yarn
+```sh
+$ yarn add recontainer
+$ yarn add recontainer-react # optional
+```
+
+With npm
+```sh
+$ npm install recontainer
+$ npm install recontainer-react # optional
+```
+
+*Please note that types are included, thus there is no need to install @types/recontainer package*
+
 ### Why?
 
 In most cases, ES6 modules are efficient way to share dependencies throughout application. 
@@ -32,7 +48,7 @@ import React from 'react';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import { createContainer } from 'recontainer';
-import { createInject, ContainerProvider } from 'recontainer/lib/react';
+import { createInject, ContainerProvider } from 'recontainer-react';
 
 class Greeting extends React.Component {
   render() {
@@ -104,7 +120,7 @@ export interface User {
 > container.ts
 ```typescript
 import { ContainerConfig } from 'recontainer';
-import { createInject, createContainerHook } from 'recontainer/lib/react';
+import { createInject, createContainerHook } from 'recontainer-react';
 import { User } from './types';
 
 export interface Dependencies {
@@ -202,7 +218,7 @@ export default inject('greeting', 'user')(Greeter);
 
 ```tsx
 import * as React from 'react';
-import { withContainer, ContainerProps } from 'recontainer/lib/react';
+import { withContainer, ContainerProps } from 'recontainer-react';
 import { Dependencies } from './container';
 
 interface GreeterProps extends ContainerProps<Dependencies> {
@@ -228,7 +244,7 @@ export default withContainer(Greeter);
 ```tsx
 import * as React from 'react';
 import { createContainer } from 'recontainer';
-import { ContainerProvider } from 'recontainer/lib/react';
+import { ContainerProvider } from 'recontainer-react';
 import { config } from './container';
 import Greeter from './Greeter';
 
@@ -257,7 +273,7 @@ export const App: React.FunctionComponent = () => (
 
 > container.js
 ```javascript
-import { createInject, createContainerHook } from 'recontainer/lib/react';
+import { createInject, createContainerHook } from 'recontainer-react';
 
 const user = {
   id: 'john-doe',
@@ -369,20 +385,6 @@ export const App = () => (
 );
 ```
 </details>
-
-## Installation
-
-With yarn
-```sh
-$ yarn add recontainer
-```
-
-With npm
-```sh
-$ npm install recontainer
-```
-
-*Please note that types are included, thus there is no need to install @types/recontainer package*
 
 ### Requirements
 
