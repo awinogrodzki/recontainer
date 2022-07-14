@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { mount } from 'enzyme';
-import { ContainerConfig, createContainer } from '../container';
+import { ContainerConfig, createContainer } from '../../../src/container';
 import { ContainerProvider } from './ContainerProvider';
 import { createContainerHook } from './hook';
 

@@ -1,4 +1,4 @@
-import { Container } from "../container";
+import { Container } from "../../../src/container";
 export interface UseContainer<T extends object> {
     (): Container<T>;
     <K extends keyof T>(key: K): Pick<T, K>;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from '../container';
+import { Container } from '../../../src/container';
 export interface ContainerProps<T> {
     container: Container<T>;
 }

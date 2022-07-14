@@ -1,6 +1,6 @@
 {
   "name": "recontainer",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
   "main": "./lib/index.js",
   "files": [
@@ -42,5 +42,6 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {},
-  "peerDependencies": {}
+  "peerDependencies": {
+  }
 }

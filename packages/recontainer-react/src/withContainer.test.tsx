@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withContainer, ContainerProps } from './withContainer';
 import { shallow, mount } from 'enzyme';
 import { ContainerProvider } from './ContainerProvider';
-import { createContainer } from '../container';
+import { createContainer } from '../../../src/container';
 
 describe('withContainer', () => {
   it('should throw descriptive error if component is rendered not in ContainerContext provider', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createInject } from './inject';
-import { createContainer, ContainerConfig } from '../container';
+import { createContainer, ContainerConfig } from '../../../src/container';
 import { mount, shallow } from 'enzyme';
 import { ContainerProvider } from './ContainerProvider';
 

@@ -13,13 +13,13 @@
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "outDir": "./lib",
-    "declaration": true,
-    "jsx": "react"
+    "declaration": true
   },
   "include": [
     "./src/**/*"
   ],
   "exclude": [
-    "./src/**/*.test.*"
+    "./src/**/*.test.*",
+    "./packages/**/*"
   ]
 }
