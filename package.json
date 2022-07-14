@@ -1,6 +1,6 @@
 {
   "name": "recontainer",
-  "version": "0.5.2",
+  "version": "1.0.0",
   "description": "Simple dependency injection for TypeScript and JavaScript React web applications.",
   "main": "./lib/index.js",
   "files": [
@@ -32,15 +32,9 @@
   },
   "homepage": "https://github.com/awinogrodzki/recontainer#readme",
   "devDependencies": {
-    "@testing-library/react-hooks": "^3.3.0",
-    "@types/enzyme": "^3.10.5",
     "@types/jest": "^26.0.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "standard-version": "^8.0.0",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2",
@@ -48,7 +42,5 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {},
-  "peerDependencies": {
-    "react": "^16.8.6 || ^17"
-  }
+  "peerDependencies": {}
 }
