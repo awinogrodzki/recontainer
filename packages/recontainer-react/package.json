@@ -1,0 +1,54 @@
+{
+  "name": "recontainer-react",
+  "version": "1.0.0",
+  "description": "Recontainer integration for React TypeScript and JavaScript applications",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "rm -rf ./lib && tsc",
+    "release": "standard-version",
+    "prepublishOnly": "yarn build",
+    "test": "jest ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awinogrodzki/recontainer.git"
+  },
+  "keywords": [
+    "dependency injection",
+    "ioc",
+    "inversion of control",
+    "container",
+    "dependencies"
+  ],
+  "author": "Amadeusz Winogrodzki <amadeusz.winogrodzki@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awinogrodzki/recontainer/issues"
+  },
+  "homepage": "https://github.com/awinogrodzki/recontainer#readme",
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^26.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "standard-version": "^8.0.0",
+    "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17"
+  }
+}
